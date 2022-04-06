@@ -32,13 +32,22 @@
             this.bookTestDriveSection = new System.Windows.Forms.Panel();
             this.addNewCarSection = new System.Windows.Forms.Panel();
             this.searchSection = new System.Windows.Forms.Panel();
+            this.optionsBar = new System.Windows.Forms.Panel();
+            this.carBrandListBox = new System.Windows.Forms.CheckedListBox();
             this.upMenu = new System.Windows.Forms.Panel();
             this.nextButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.resultsTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.optionsBar = new System.Windows.Forms.Panel();
+            this.carBrandLabel = new System.Windows.Forms.Label();
+            this.modelLabel = new System.Windows.Forms.Label();
+            this.modelListBox = new System.Windows.Forms.CheckedListBox();
+            this.yearLabel = new System.Windows.Forms.Label();
+            this.yearListBox = new System.Windows.Forms.CheckedListBox();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.priceListBox = new System.Windows.Forms.CheckedListBox();
             this.leftMenu.SuspendLayout();
             this.searchSection.SuspendLayout();
+            this.optionsBar.SuspendLayout();
             this.upMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +89,31 @@
             this.searchSection.TabIndex = 0;
             this.searchSection.Paint += new System.Windows.Forms.PaintEventHandler(this.searchSection_Paint);
             // 
+            // optionsBar
+            // 
+            this.optionsBar.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.optionsBar.Controls.Add(this.priceListBox);
+            this.optionsBar.Controls.Add(this.priceLabel);
+            this.optionsBar.Controls.Add(this.yearListBox);
+            this.optionsBar.Controls.Add(this.yearLabel);
+            this.optionsBar.Controls.Add(this.modelListBox);
+            this.optionsBar.Controls.Add(this.modelLabel);
+            this.optionsBar.Controls.Add(this.carBrandLabel);
+            this.optionsBar.Controls.Add(this.carBrandListBox);
+            this.optionsBar.Location = new System.Drawing.Point(0, 0);
+            this.optionsBar.Name = "optionsBar";
+            this.optionsBar.Size = new System.Drawing.Size(180, 1075);
+            this.optionsBar.TabIndex = 1;
+            // 
+            // carBrandListBox
+            // 
+            this.carBrandListBox.FormattingEnabled = true;
+            this.carBrandListBox.Location = new System.Drawing.Point(0, 36);
+            this.carBrandListBox.Name = "carBrandListBox";
+            this.carBrandListBox.Size = new System.Drawing.Size(180, 109);
+            this.carBrandListBox.TabIndex = 0;
+            this.carBrandListBox.SelectedIndexChanged += new System.EventHandler(this.carBrandListBox_SelectedIndexChanged);
+            // 
             // upMenu
             // 
             this.upMenu.BackColor = System.Drawing.Color.OrangeRed;
@@ -117,13 +151,72 @@
             this.resultsTable.TabIndex = 2;
             this.resultsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.resultsTable_Paint);
             // 
-            // optionsBar
+            // carBrandLabel
             // 
-            this.optionsBar.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.optionsBar.Location = new System.Drawing.Point(0, 0);
-            this.optionsBar.Name = "optionsBar";
-            this.optionsBar.Size = new System.Drawing.Size(180, 600);
-            this.optionsBar.TabIndex = 1;
+            this.carBrandLabel.AutoSize = true;
+            this.carBrandLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carBrandLabel.Location = new System.Drawing.Point(0, 17);
+            this.carBrandLabel.Name = "carBrandLabel";
+            this.carBrandLabel.Size = new System.Drawing.Size(76, 16);
+            this.carBrandLabel.TabIndex = 1;
+            this.carBrandLabel.Text = "Car Brand";
+            // 
+            // modelLabel
+            // 
+            this.modelLabel.AutoSize = true;
+            this.modelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelLabel.Location = new System.Drawing.Point(0, 159);
+            this.modelLabel.Name = "modelLabel";
+            this.modelLabel.Size = new System.Drawing.Size(50, 16);
+            this.modelLabel.TabIndex = 2;
+            this.modelLabel.Text = "Model";
+            // 
+            // modelListBox
+            // 
+            this.modelListBox.FormattingEnabled = true;
+            this.modelListBox.Location = new System.Drawing.Point(0, 178);
+            this.modelListBox.Name = "modelListBox";
+            this.modelListBox.Size = new System.Drawing.Size(180, 109);
+            this.modelListBox.TabIndex = 3;
+            this.modelListBox.SelectedIndexChanged += new System.EventHandler(this.modelListBox_SelectedIndexChanged);
+            // 
+            // yearLabel
+            // 
+            this.yearLabel.AutoSize = true;
+            this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearLabel.Location = new System.Drawing.Point(0, 304);
+            this.yearLabel.Name = "yearLabel";
+            this.yearLabel.Size = new System.Drawing.Size(40, 16);
+            this.yearLabel.TabIndex = 4;
+            this.yearLabel.Text = "Year";
+            // 
+            // yearListBox
+            // 
+            this.yearListBox.FormattingEnabled = true;
+            this.yearListBox.Location = new System.Drawing.Point(0, 323);
+            this.yearListBox.Name = "yearListBox";
+            this.yearListBox.Size = new System.Drawing.Size(180, 109);
+            this.yearListBox.TabIndex = 5;
+            this.yearListBox.SelectedIndexChanged += new System.EventHandler(this.yearListBox_SelectedIndexChanged);
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.Location = new System.Drawing.Point(0, 445);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(43, 16);
+            this.priceLabel.TabIndex = 6;
+            this.priceLabel.Text = "Price";
+            // 
+            // priceListBox
+            // 
+            this.priceListBox.FormattingEnabled = true;
+            this.priceListBox.Location = new System.Drawing.Point(0, 464);
+            this.priceListBox.Name = "priceListBox";
+            this.priceListBox.Size = new System.Drawing.Size(180, 109);
+            this.priceListBox.TabIndex = 7;
+            this.priceListBox.SelectedIndexChanged += new System.EventHandler(this.priceListBox_SelectedIndexChanged);
             // 
             // Main
             // 
@@ -138,6 +231,8 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.leftMenu.ResumeLayout(false);
             this.searchSection.ResumeLayout(false);
+            this.optionsBar.ResumeLayout(false);
+            this.optionsBar.PerformLayout();
             this.upMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -154,6 +249,14 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.FlowLayoutPanel resultsTable;
         private System.Windows.Forms.Panel optionsBar;
+        private System.Windows.Forms.CheckedListBox carBrandListBox;
+        private System.Windows.Forms.Label carBrandLabel;
+        private System.Windows.Forms.CheckedListBox modelListBox;
+        private System.Windows.Forms.Label modelLabel;
+        private System.Windows.Forms.CheckedListBox yearListBox;
+        private System.Windows.Forms.Label yearLabel;
+        private System.Windows.Forms.CheckedListBox priceListBox;
+        private System.Windows.Forms.Label priceLabel;
     }
 }
 
