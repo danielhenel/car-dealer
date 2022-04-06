@@ -1,0 +1,11 @@
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\bin\Debug\CarDealer.exe.config
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\bin\Debug\CarDealer.exe
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\bin\Debug\CarDealer.pdb
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.csproj.AssemblyReference.cache
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.Main.resources
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.Properties.Resources.resources
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.csproj.GenerateResource.cache
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.exe
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.pdb

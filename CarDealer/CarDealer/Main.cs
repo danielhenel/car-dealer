@@ -15,6 +15,48 @@ namespace CarDealer
         public Main()
         {
             InitializeComponent();
+            CarsList lista = new CarsList();
+            CarsList.printMake();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void add()
+        {
+
+        }
+
+        private void remove()
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void resultsTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void searchSection_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
