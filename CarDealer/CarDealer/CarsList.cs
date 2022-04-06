@@ -15,26 +15,44 @@ namespace CarDealer
             loadData();
         }
 
-        static List<Car> items;
+        static List<Car> items = new List<Car> { };
         static private String path = "Resources/1000CarsDataSet";
-        static Dictionary<string, HashSet<String>> makeDict = new Dictionary<string, HashSet<string>> {};
-        static Dictionary<string, HashSet<String>> modelDict = new Dictionary<string, HashSet<string>> {};
-        static Dictionary<int, HashSet<String>> yearDict = new Dictionary<int, HashSet<string>> {};
-        static Dictionary<int, HashSet<String>> priceDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> wheelSizeDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> horsepowerDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> displacementDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> engineTypeDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> widthDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> heightDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> lenghtDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> gasMileageDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<string, HashSet<String>> drivetrainDict = new Dictionary<string, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> passengerCapacityDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<int, HashSet<String>> passengerDoorsDict = new Dictionary<int, HashSet<string>> { };
-        static Dictionary<string, HashSet<String>> bodyStyleDict = new Dictionary<string, HashSet<string>> { };
+        static Dictionary<string, HashSet<Car>> makeDict = new Dictionary<string, HashSet<Car>> {};
+        static Dictionary<string, HashSet<Car>> modelDict = new Dictionary<string, HashSet<Car>> {};
+        static Dictionary<int, HashSet<Car>> yearDict = new Dictionary<int, HashSet<Car>> {};
+        static Dictionary<int, HashSet<Car>> priceDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> wheelSizeDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> horsepowerDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> displacementDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> engineTypeDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> widthDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> heightDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> lenghtDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> gasMileageDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<string, HashSet<Car>> drivetrainDict = new Dictionary<string, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> passengerCapacityDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> passengerDoorsDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<string, HashSet<Car>> bodyStyleDict = new Dictionary<string, HashSet<Car>> { };
 
-        static private void saveAddToDict(Dictionary<string, HashSet<String>> dict, string key, string value)
+        public static Dictionary<string, HashSet<Car>> MakeDict { get => makeDict;}
+        public static Dictionary<string, HashSet<Car>> ModelDict { get => modelDict;}
+        public static Dictionary<int, HashSet<Car>> YearDict { get => yearDict;}
+        public static Dictionary<int, HashSet<Car>> PriceDict { get => priceDict;}
+        public static Dictionary<int, HashSet<Car>> WheelSizeDict { get => wheelSizeDict;}
+        public static Dictionary<int, HashSet<Car>> HorsepowerDict { get => horsepowerDict;}
+        public static Dictionary<int, HashSet<Car>> DisplacementDict { get => displacementDict;}
+        public static Dictionary<int, HashSet<Car>> EngineTypeDict { get => engineTypeDict;}
+        public static Dictionary<int, HashSet<Car>> WidthDict { get => widthDict;}
+        public static Dictionary<int, HashSet<Car>> HeightDict { get => heightDict;}
+        public static Dictionary<int, HashSet<Car>> LenghtDict { get => lenghtDict;}
+        public static Dictionary<int, HashSet<Car>> GasMileageDict { get => gasMileageDict;}
+        public static Dictionary<string, HashSet<Car>> DrivetrainDict { get => drivetrainDict;}
+        public static Dictionary<int, HashSet<Car>> PassengerCapacityDict { get => passengerCapacityDict;}
+        public static Dictionary<int, HashSet<Car>> PassengerDoorsDict { get => passengerDoorsDict;}
+        public static Dictionary<string, HashSet<Car>> BodyStyleDict { get => bodyStyleDict;}
+        public static List<Car> Items { get => items;}
+
+        static private void saveAddToDict(Dictionary<string, HashSet<Car>> dict, string key, Car value)
         {
             if (dict.ContainsKey(key))
             {
@@ -42,12 +60,12 @@ namespace CarDealer
             }
             else
             {
-                dict[key] = new HashSet<string>();
+                dict[key] = new HashSet<Car>();
                 dict[key].Add(value);
             }
         }
 
-        static private void saveAddToDict(Dictionary<int, HashSet<String>> dict, int key, string value)
+        static private void saveAddToDict(Dictionary<int, HashSet<Car>> dict, int key, Car value)
         {
             if (dict.ContainsKey(key))
             {
@@ -55,7 +73,7 @@ namespace CarDealer
             }
             else
             {
-                dict[key] = new HashSet<string>();
+                dict[key] = new HashSet<Car>();
                 dict[key].Add(value);
             }
         }
@@ -107,22 +125,23 @@ namespace CarDealer
             {
                 Car car = loadCar(fileEntry);
                 
-                saveAddToDict(makeDict,car.Make,car.ImageName);
-                saveAddToDict(modelDict, car.Model, car.ImageName);
-                saveAddToDict(yearDict, car.Year, car.ImageName);
-                saveAddToDict(priceDict, car.Price, car.ImageName);
-                saveAddToDict(wheelSizeDict, car.WheelSize, car.ImageName);
-                saveAddToDict(horsepowerDict, car.Horsepower, car.ImageName);
-                saveAddToDict(displacementDict, car.Displacement, car.ImageName);
-                saveAddToDict(engineTypeDict, car.EngineType, car.ImageName);
-                saveAddToDict(widthDict, car.Width, car.ImageName);
-                saveAddToDict(heightDict, car.Height, car.ImageName);
-                saveAddToDict(lenghtDict, car.Lenght, car.ImageName);
-                saveAddToDict(gasMileageDict, car.GasMileage, car.ImageName);
-                saveAddToDict(drivetrainDict, car.Drivetrain, car.ImageName);
-                saveAddToDict(passengerCapacityDict, car.PassengerCapacity, car.ImageName);
-                saveAddToDict(passengerDoorsDict, car.PassengerDoors, car.ImageName);
-                saveAddToDict(bodyStyleDict, car.BodyStyle, car.ImageName);
+                items.Add(car);
+                saveAddToDict(makeDict,car.Make,car);
+                saveAddToDict(modelDict, car.Model, car);
+                saveAddToDict(yearDict, car.Year, car);
+                saveAddToDict(priceDict, car.Price, car);
+                saveAddToDict(wheelSizeDict, car.WheelSize, car);
+                saveAddToDict(horsepowerDict, car.Horsepower, car);
+                saveAddToDict(displacementDict, car.Displacement, car);
+                saveAddToDict(engineTypeDict, car.EngineType, car);
+                saveAddToDict(widthDict, car.Width, car);
+                saveAddToDict(heightDict, car.Height, car);
+                saveAddToDict(lenghtDict, car.Lenght, car);
+                saveAddToDict(gasMileageDict, car.GasMileage, car);
+                saveAddToDict(drivetrainDict, car.Drivetrain, car);
+                saveAddToDict(passengerCapacityDict, car.PassengerCapacity, car);
+                saveAddToDict(passengerDoorsDict, car.PassengerDoors, car);
+                saveAddToDict(bodyStyleDict, car.BodyStyle, car);
             }   
         }
     }
