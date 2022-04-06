@@ -53,6 +53,19 @@ namespace CarDealer
             this.ImageName = imageName;
         }
 
+        public class CarComparer : IEqualityComparer<Car>
+        {
+            public bool Equals(Car x, Car y)
+            {
+                return x.ImageName == y.ImageName;
+            }
+
+            public int GetHashCode(Car obj)
+            {
+                return obj.ImageName.GetHashCode();
+            }
+        }
+
         public string Make { get => make; set => make = value; }
         public string Model { get => model; set => model = value; }
         public int Year { get => year; set => year = value; }
