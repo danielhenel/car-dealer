@@ -27,7 +27,7 @@ namespace CarDealer
         static Dictionary<int, HashSet<Car>> engineTypeDict = new Dictionary<int, HashSet<Car>> { };
         static Dictionary<int, HashSet<Car>> widthDict = new Dictionary<int, HashSet<Car>> { };
         static Dictionary<int, HashSet<Car>> heightDict = new Dictionary<int, HashSet<Car>> { };
-        static Dictionary<int, HashSet<Car>> lenghtDict = new Dictionary<int, HashSet<Car>> { };
+        static Dictionary<int, HashSet<Car>> lengthDict = new Dictionary<int, HashSet<Car>> { };
         static Dictionary<int, HashSet<Car>> gasMileageDict = new Dictionary<int, HashSet<Car>> { };
         static Dictionary<string, HashSet<Car>> drivetrainDict = new Dictionary<string, HashSet<Car>> { };
         static Dictionary<int, HashSet<Car>> passengerCapacityDict = new Dictionary<int, HashSet<Car>> { };
@@ -44,7 +44,7 @@ namespace CarDealer
         public static Dictionary<int, HashSet<Car>> EngineTypeDict { get => engineTypeDict;}
         public static Dictionary<int, HashSet<Car>> WidthDict { get => widthDict;}
         public static Dictionary<int, HashSet<Car>> HeightDict { get => heightDict;}
-        public static Dictionary<int, HashSet<Car>> LenghtDict { get => lenghtDict;}
+        public static Dictionary<int, HashSet<Car>> LengthDict { get => lengthDict;}
         public static Dictionary<int, HashSet<Car>> GasMileageDict { get => gasMileageDict;}
         public static Dictionary<string, HashSet<Car>> DrivetrainDict { get => drivetrainDict;}
         public static Dictionary<int, HashSet<Car>> PassengerCapacityDict { get => passengerCapacityDict;}
@@ -113,7 +113,7 @@ namespace CarDealer
                     saveParseToInt(subs[13]), //passengerCapacity
                     saveParseToInt(subs[14]), //passengerDoors
                     subs[15], //bodyStyle
-                    subs[16] //imageName
+                    fileName //imageName
                     ));
         }
 
@@ -136,7 +136,7 @@ namespace CarDealer
                 saveAddToDict(engineTypeDict, car.EngineType, car);
                 saveAddToDict(widthDict, car.Width, car);
                 saveAddToDict(heightDict, car.Height, car);
-                saveAddToDict(lenghtDict, car.Lenght, car);
+                saveAddToDict(lengthDict, car.Length, car);
                 saveAddToDict(gasMileageDict, car.GasMileage, car);
                 saveAddToDict(drivetrainDict, car.Drivetrain, car);
                 saveAddToDict(passengerCapacityDict, car.PassengerCapacity, car);

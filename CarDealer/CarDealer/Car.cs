@@ -29,7 +29,7 @@ namespace CarDealer
         public Car(string make, string model, int year,
             int price, int wheelSize, int horsepower, 
             int displacement, int engineType, int width, 
-            int height, int lenght, int gasMileage, 
+            int height, int length, int gasMileage, 
             string drivetrain, int passengerCapacity, 
             int passengerDoors, string bodyStyle,
             string imageName)
@@ -44,7 +44,7 @@ namespace CarDealer
             this.EngineType = engineType;
             this.Width = width;
             this.Height = height;
-            this.Lenght = lenght;
+            this.Length = length;
             this.GasMileage = gasMileage;
             this.Drivetrain = drivetrain;
             this.PassengerCapacity = passengerCapacity;
@@ -76,7 +76,7 @@ namespace CarDealer
         public int EngineType { get => engineType; set => engineType = value; }
         public int Width { get => width; set => width = value; }
         public int Height { get => height; set => height = value; }
-        public int Lenght { get => lenght; set => lenght = value; }
+        public int Length { get => lenght; set => lenght = value; }
         public int GasMileage { get => gasMileage; set => gasMileage = value; }
         public string Drivetrain { get => drivetrain; set => drivetrain = value; }
         public int PassengerCapacity { get => passengerCapacity; set => passengerCapacity = value; }
