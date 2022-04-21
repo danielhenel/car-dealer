@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarDealer
 {
-    internal class Car
+    public class Car
     {
         private string make;
         string model;
@@ -53,6 +53,14 @@ namespace CarDealer
             this.ImageName = imageName;
         }
 
+        public String ToString()
+        {
+            string[] subs = imageName.Split('_');
+            return make + "_" + model + "_" + year.ToString() + "_" + price.ToString() + "_" + wheelSize.ToString() + "_" + horsepower.ToString() + "_" +
+                displacement.ToString() + "_" + displacement.ToString() + "_" + engineType.ToString() + "_" + width.ToString() + "_" + height.ToString() + "_"
+                + lenght.ToString() + "_" + gasMileage.ToString() + "_" + drivetrain.ToString() + "_" + passengerCapacity.ToString() + "_" +
+                passengerDoors.ToString() + "_" + bodyStyle.ToString() + "_" + subs[16];
+        }
         public class CarComparer : IEqualityComparer<Car>
         {
             public bool Equals(Car x, Car y)
@@ -84,4 +92,5 @@ namespace CarDealer
         public string BodyStyle { get => bodyStyle; set => bodyStyle = value; }
         public string ImageName { get => imageName; set => imageName = value; }
     }
+
 }

@@ -9,3 +9,5 @@ C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debu
 C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.csproj.CoreCompileInputs.cache
 C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.exe
 C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.pdb
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.ViewCarDetailsForm.resources
+C:\Users\Daniel\Desktop\Programming\repo\car-dealer\CarDealer\CarDealer\obj\Debug\CarDealer.ReservationForm.resources

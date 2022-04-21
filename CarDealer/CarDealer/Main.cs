@@ -97,7 +97,10 @@ namespace CarDealer
                 pic.Size = new System.Drawing.Size(155, 155);
                 pic.TabIndex = k;
                 pic.TabStop = false;
-                pic.Image = Image.FromFile(path + "\\Resources\\1000CarsDataSet\\" + car.ImageName);
+                pic.Click += new System.EventHandler(pic_Click);
+               // pic.Image = Image.FromFile(path + "\\Resources\\1000CarsDataSet\\" + car.ImageName);
+                pic.ImageLocation = path + "\\Resources\\1000CarsDataSet\\" + car.ImageName;
+                pic.AccessibleName = car.ImageName;
                 k++;
 
                 this.resultsTable.Controls.Add(pic);
@@ -453,6 +456,12 @@ namespace CarDealer
 
             loadOptionsInSearchSection();
             loadPictures();
+        }
+
+        private void pic_Click(object sender, EventArgs e)
+        {
+            ViewCarDetailsForm viewCar = new ViewCarDetailsForm(CarsList.getCarByFilename(((PictureBox)sender).AccessibleName)    );
+            viewCar.Show();
         }
     }
 }

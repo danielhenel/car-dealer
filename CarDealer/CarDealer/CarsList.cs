@@ -91,7 +91,7 @@ namespace CarDealer
             }
         }
 
-        static private Car loadCar(string fileName)
+        static public Car loadCar(string fileName)
         {
             string[] subs = fileName.Split('_');
 
@@ -117,14 +117,26 @@ namespace CarDealer
                     ));
         }
 
+        static public Car getCarByFilename(string fileName)
+        {
+            for(int i=0; i<items.Count; i++)
+            {
+                if(items[i].ImageName==fileName) return items[i];
+            }
+            return null;
+        }
+
+
         static private void loadData()
         {
             var fileName = Directory.GetFiles(path).Select(f => Path.GetFileName(f));
             string[] fileEntries = fileName.ToArray();
             foreach (string fileEntry in fileEntries)
             {
+                if (fileEntry.Substring(fileEntry.Length - 3, 3) == "txt") continue;
                 Car car = loadCar(fileEntry);
-                
+                //System.IO.File.Create(path + "/" + fileEntry.Substring(0, fileEntry.Length - 3) + "txt");
+
                 items.Add(car);
                 saveAddToDict(makeDict,car.Make,car);
                 saveAddToDict(modelDict, car.Model, car);
