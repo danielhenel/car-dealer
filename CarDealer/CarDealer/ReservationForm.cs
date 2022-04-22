@@ -14,9 +14,11 @@ namespace CarDealer
     public partial class ReservationForm : Form
     {
         private Car car;
-        public ReservationForm(Car car)
+        private ViewCarDetailsForm parent;
+        public ReservationForm(Car car, ViewCarDetailsForm parent)
         {
             this.car = car;
+            this.parent = parent;
             InitializeComponent();
         }
 
@@ -31,6 +33,9 @@ namespace CarDealer
             Reservation reservation = new Reservation(this.textBox.Text, this.dateTimePicker.Value);
            // System.IO.File.Create(path + "/" + car.ImageName.Substring(0, car.ImageName.Length - 3) + "txt");
             File.AppendAllText(path + "/" + car.ImageName.Substring(0, car.ImageName.Length - 3) + "txt", reservation.ToString()+"\n");
+            parent.loadReservations(path + "/" + car.ImageName.Substring(0, car.ImageName.Length - 3) + "txt");
+            parent.showReservations();
+;            this.Close();
 
         }
 

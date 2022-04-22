@@ -503,11 +503,11 @@ namespace CarDealer
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ReservationForm re = new ReservationForm(car);
+            ReservationForm re = new ReservationForm(car, this);
             re.Show();
         }
 
-        private void parseReservation(String line)
+        private Reservation parseReservation(String line)
         {
             String [] subs = line.Split(' ');
             String name = "";
@@ -559,24 +559,28 @@ namespace CarDealer
 
             Console.WriteLine(date);
             DateTime date2 = DateTime.Parse(date);
-            Reservation r = new Reservation(name, date2);
-            reservations.Add(r);
+            return new Reservation(name, date2);
         }
 
-        private void loadReservations(String filename)
+        public void loadReservations(String filename)
         {
+            reservations.Clear();
             using (StreamReader reader = new StreamReader(filename))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if(line!=" ") parseReservation(line);
+                    if (line != " ")
+                    { Reservation r = parseReservation(line);
+                        reservations.Add(r);
+                            }
                 }
             }
         }
 
-        private void showReservations()
+        public void showReservations()
         {
+            this.flowLayoutPanel1.Controls.Clear();
             int k  = 0;
             foreach(Reservation r in reservations.ToArray())
             {
@@ -588,6 +592,7 @@ namespace CarDealer
                 panel.TabIndex = k;
                 panel.Click += new System.EventHandler(this.panel_Click);
                 panel.BackColor = System.Drawing.Color.Red;
+                panel.AccessibleName = r.ToString();
                 
                 Label name = new Label();
                 Label date = new Label();
@@ -616,17 +621,7 @@ namespace CarDealer
 
         private void panel_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Click(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
